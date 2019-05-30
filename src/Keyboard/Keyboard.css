@@ -1,0 +1,36 @@
+.keyboard {
+  display: flex;
+}
+
+.whiteKey {
+  width: 30px;
+  height: 150px;
+  background: #fff;
+}
+
+.key {
+  border-style: solid;
+  border-color: #000;
+  border-width: 2px 1px 2px 1px;
+  border-radius: 0 0 4px 4px;
+}
+
+.key:first-of-type {
+  border-left-width: 2px;
+  border-top-left-radius: 4px;
+}
+
+.key:last-of-type {
+  border-right-width: 2px;
+  border-top-right-radius: 4px;
+}
+
+.blackKey {
+  position: relative;
+  z-index: 1;
+  width: 20px;
+  height: 100px;
+  background: #000;
+  margin-left: -11px;
+  margin-right: -11px;
+}
