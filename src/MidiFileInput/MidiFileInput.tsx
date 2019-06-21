@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { parse } from '../parser/parser';
+import { parserWorker } from '..';
 
 export class MidiFileInput extends React.PureComponent {
   getMidiFile(event: React.ChangeEvent<HTMLInputElement>) {
@@ -11,7 +11,7 @@ export class MidiFileInput extends React.PureComponent {
       reader.onloadend = () => {
         if (reader.result instanceof ArrayBuffer) {
           const binaryData = new Uint8Array(reader.result);
-          console.log(parse(binaryData))
+          parserWorker.ports.parseMidi.send(Array.from(binaryData))
         } else {
           throw new Error('FileReader result is not an ArrayBuffer')
         }

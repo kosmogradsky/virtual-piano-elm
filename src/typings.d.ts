@@ -10,3 +10,9 @@ declare module 'soundfont-player' {
 
   export default Soundfont;
 }
+
+declare module '*.elm' {
+  const Elm: any;
+
+  export { Elm }
+}
